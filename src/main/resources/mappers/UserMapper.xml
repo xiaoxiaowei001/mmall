@@ -163,10 +163,18 @@
     select
     <include refid="Base_Column_List" />
     from mmall_user
-    where username =#(username)
-    and password = #(password)
+    where username =#{username}
+    and password = #{password}
 
   </select>
+ <!-- <select id="selectLogin" resultMap="BaseResultMap" parameterType="map">
+    SELECT
+    &#45;&#45;     *???//这样真的好么?答案就是,这样不好.
+    <include refid="Base_Column_List" />
+    from mmall_user
+    where username = #{username}
+    and password = #{password}
+  </select>-->
   <select id="SelectQuestionByUsername" resultType="string" parameterType="string">
     select question from mmall_user
     where
