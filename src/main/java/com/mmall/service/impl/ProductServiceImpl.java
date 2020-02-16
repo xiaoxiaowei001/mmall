@@ -19,7 +19,7 @@ public class ProductServiceImpl implements IProductService {
     public ServerResponse saveOrUpdateProduct(Product product) {
         if (product != null) {
             if (StringUtils.isNotBlank(product.getSubImages())) {
-                String[] subImageArray = product.getSubImages().split(",");
+                String[] subImageArray = product.getSubImages().split(".");
                 if (subImageArray.length > 0) {
                     product.setMainImage(subImageArray[0]);
                 }
@@ -55,5 +55,4 @@ public class ProductServiceImpl implements IProductService {
         }
         return ServerResponse.createByErrorMessage("更新产品销售状态失败");
     }
-
 }
