@@ -78,7 +78,7 @@ public class CategoryServiceImpl implements ICategoryService {
         return categorySet;
     }
     //递归查询当前节点id及孩子节点的id
-    public ServerResponse selectCategoryAndChildrenById(Integer categoryId){
+    public ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId){
         Set<Category> categorySet = Sets.newHashSet();
         findChildCategory(categorySet,categoryId);
         List<Integer> categoryIdList = Lists.newArrayList();
