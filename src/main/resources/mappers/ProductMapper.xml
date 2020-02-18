@@ -186,7 +186,7 @@
     from mmall_product
     <where>
       <if test="productName != null">
-        and name = #{productname}
+        and name like #{productName}
       </if>
       <if test="productId != null">
         and id = #{productId}
